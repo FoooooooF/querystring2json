@@ -1,5 +1,6 @@
 # querystring to json 
-
+    querystring to json & json to querystring
+    
 ## use in script
 - import index.js
 ``` javascript
