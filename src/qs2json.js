@@ -2,8 +2,8 @@
  * querystring to json
  * "a=1&a=2&b=2&c=3&d=123&e=true" to  { a: [ '1', '2' ], b: '2', c: '3', d: '123', e: 'true' }
  */
-let str="a=1&a=2&b=2&c=3&d=123&e=true"
-function parse(str){
+// let str="a=1&a=2&b=2&c=3&d=123&e=true"
+export function parse(str){
     let result={};
     let s1=str.split("&");
     
@@ -19,4 +19,5 @@ function parse(str){
     })
     return result;
 }
-console.log(parse(str));
+// console.log(parse(str));
+// export default parse;
