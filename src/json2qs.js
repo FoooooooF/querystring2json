@@ -13,5 +13,3 @@ export function stringify(obj){
     }
     return result.slice(0,-1);
 }
-// console.log(stringify(obj));
-// export stringify;
