@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>example</title>
+</head>
+<body>
+    <div style="width:400px;margin:100px auto">
+            <h2>querystring to json</h2>
+            <p>a=1&a=2&b=2&c=3&d=123&e=true</p>
+            <br>
+            <button id="btn1" onclick="parse()" >querystring to json</button>
+            <br>
+            <br>
+            <textarea name="qs2json" id="qs2json" cols="30" rows="10" ></textarea>
+        
+            <h2>json to querystring</h2>
+            <p>{ a: [ '1', '2' ], b: '2', c: '3',d:123,e:true }</p>
+            <br>
+            <button id="btn2" onclick="stringify()">json to querystring</button>
+            <br>
+            <br>
+            <textarea name="json2qs" id="json2qs" cols="30" rows="10"></textarea>
+    </div>
+    
+
+    <script src="../lib/index.js"></script>
+    <script>
+        function parse(){
+            let str="a=1&a=2&b=2&c=3&d=123&e=true"
+            let obj=qs.parse(str);
+            console.log(obj);
+            document.getElementById('qs2json').value=JSON.stringify(obj);
+        }
+
+        function stringify(){
+            let obj={ a: [ '1', '2' ], b: '2', c: '3',d:123,e:true };
+            let str=qs.stringify(obj);
+            console.log(str);
+            document.getElementById('json2qs').value=str;
+        }
+        
+    </script>    
+</body>
+</html>
