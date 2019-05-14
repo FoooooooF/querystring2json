@@ -20,9 +20,13 @@
 
 
 ##  use in node
+- install
+```bash
+    npm i querystring2json
+```
 - example
 ``` javascript
-    const qs =require("../lib/index.js");
+    const qs =require("querystring2json");
     let str="a=1&a=2&b=2&c=3&d=123&e=true";
     let obj=qs.parse(str);
     console.log(obj); //{ a: [ '1', '2' ], b: '2', c: '3',d:123,e:true }

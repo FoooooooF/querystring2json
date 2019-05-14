@@ -15,7 +15,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build":"webpack --mode production"
   },
-  "keywords": [],
+  "keywords": ["querystring","json","stringify","parse"],
   "author": "",
   "license": "ISC",
   "devDependencies": {
