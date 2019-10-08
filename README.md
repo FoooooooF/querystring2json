@@ -36,8 +36,11 @@
 ## to develop
 - install
 ``` bash
-    npm isntall
-
+    npm install
+```
+- test
+```
+    npm run test
 ```
 - build
 ```bash

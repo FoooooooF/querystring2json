@@ -1,15 +1,24 @@
-let obj={ a: [ '1', '2' ], b: '2', c: '3',d:123,e:true };
+/**
+ * json to  querystring
+ * { a: [ '1', '2' ], b: '2', c: '3', d: '123', e: 'true' }  to  "a=1&a=2&b=2&c=3&d=123&e=true"
+ */
 export function stringify(obj){
-    let result="";
-    for(let key in obj){
-        if( typeof obj[key] !='object'){ //非对象值都转化为字符串
-            obj[key]=obj[key].toString();
-            result+=key+"="+obj[key]+"&"
-        }else if(obj[key] instanceof Array){ //是数组
-            obj[key].forEach(v=>{
-                result+=key+"="+v+"&"
-            })
+    try{
+        let result="";
+        for(let key in obj){
+            if(Object.prototype.toString.call(obj[key]) =='[object Array]'){ //是数组
+                obj[key].forEach(v=>{
+                    result+=key+"="+v+"&";
+                })
+            }else if(Object.prototype.toString.call(obj[key]) =='[object Object]'){
+                throw new Error("param object can't include obejct")
+            }else{
+                obj[key]=obj[key].toString();
+                result+=key+"="+obj[key]+"&";
+            }
         }
+        return result.slice(0,-1);
+    }catch(err){
+        throw err
     }
-    return result.slice(0,-1);
 }
