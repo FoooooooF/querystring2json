@@ -9,9 +9,11 @@ module.exports = {
         globalObject: "this", //需要配置为 "this", 默认为 "window"  兼容window环境和node环境
         libraryTarget: 'umd'
     },
-    module:{
-        rules: [
-            { test: /\.js$/, use: 'babel-loader',exclude: [/node_modules/,/test/,/example/,/lib/], },
-        ]
+    module: {
+        rules: [{
+            test: /\.js$/,
+            use: 'babel-loader',
+            exclude: [/node_modules/, /test/, /example/, /lib/]
+        }]
     }
 };
