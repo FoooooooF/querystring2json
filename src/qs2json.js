@@ -4,6 +4,9 @@
  */
 import {trim} from "./utils.js";
 export function parse(str){
+    if(Object.prototype.toString.call(str) !='[object String]'){
+        throw new Error("param must be a String");
+    }
     let result={};
     let s1=str.split("&");
     s1.forEach((v,i)=>{
