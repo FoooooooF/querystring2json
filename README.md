@@ -2,7 +2,8 @@
     querystring to json & json to querystring
     
 ## use in script
-- import index.js
+- import `index.js`
+- `index.js` export global `qs` object with two methods `parse` and `stringify`
 ``` html
     <script src="./lib/index.js"></script>
 
